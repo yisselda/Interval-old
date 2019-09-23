@@ -13,6 +13,7 @@
 		06448EE523353CFA007F610D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06448EE423353CFA007F610D /* Assets.xcassets */; };
 		06448EE823353CFA007F610D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06448EE623353CFA007F610D /* LaunchScreen.storyboard */; };
 		06448EF323353CFA007F610D /* IntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06448EF223353CFA007F610D /* IntervalTests.swift */; };
+		ED854D53233843D3008A3E3B /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED854D4E2338436F008A3E3B /* SpotifyiOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,8 @@
 		06448EEE23353CFA007F610D /* IntervalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntervalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06448EF223353CFA007F610D /* IntervalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTests.swift; sourceTree = "<group>"; };
 		06448EF423353CFA007F610D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED854D4A233841B0008A3E3B /* Interval-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Interval-Bridging-Header.h"; sourceTree = "<group>"; };
+		ED854D4E2338436F008A3E3B /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyiOS.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED854D53233843D3008A3E3B /* SpotifyiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +66,7 @@
 				06448EDC23353CF5007F610D /* Interval */,
 				06448EF123353CFA007F610D /* IntervalTests */,
 				06448EDB23353CF5007F610D /* Products */,
+				ED854D502338438D008A3E3B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +82,8 @@
 		06448EDC23353CF5007F610D /* Interval */ = {
 			isa = PBXGroup;
 			children = (
+				ED854D52233843AE008A3E3B /* Spotfiy Framework */,
+				ED854D49233841B0008A3E3B /* Bridging Header */,
 				06448EDD23353CF5007F610D /* AppDelegate.swift */,
 				06448EDF23353CF5007F610D /* ViewController.swift */,
 				06448EE123353CF5007F610D /* Main.storyboard */,
@@ -94,6 +101,30 @@
 				06448EF423353CFA007F610D /* Info.plist */,
 			);
 			path = IntervalTests;
+			sourceTree = "<group>";
+		};
+		ED854D49233841B0008A3E3B /* Bridging Header */ = {
+			isa = PBXGroup;
+			children = (
+				ED854D4A233841B0008A3E3B /* Interval-Bridging-Header.h */,
+			);
+			name = "Bridging Header";
+			path = "Interval/Bridging Header";
+			sourceTree = SOURCE_ROOT;
+		};
+		ED854D502338438D008A3E3B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED854D52233843AE008A3E3B /* Spotfiy Framework */ = {
+			isa = PBXGroup;
+			children = (
+				ED854D4E2338436F008A3E3B /* SpotifyiOS.framework */,
+			);
+			path = "Spotfiy Framework";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,13 +393,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4UB6MPKKN3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Interval/Spotfiy\\ Framework",
+				);
 				INFOPLIST_FILE = Interval/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yr.Interval;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Interval/Bridging Header/Interval-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -380,13 +418,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4UB6MPKKN3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Interval/Spotfiy\\ Framework",
+				);
 				INFOPLIST_FILE = Interval/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yr.Interval;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Interval/Bridging Header/Interval-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
