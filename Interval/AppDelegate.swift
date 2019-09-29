@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let SpotifyClientID = "e4aa9f015b3743ec9d51813eaf04cccd"
+private let SpotifyClientID = "2ab7f90f49a741c9a384b014163fd95b"
 private let SpotifyRedirectURL = URL(string: "spotify-ios-quick-start://spotify-login-callback")!
 
 @UIApplicationMain
@@ -24,8 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
     
     private lazy var sessionManager: SPTSessionManager = {
-        if let tokenSwapURL = URL(string: "http://localhost:1234/swap"),
-            let tokenRefreshURL = URL(string: "http://localhost:1234/refresh") {
+        if let tokenSwapURL = URL(string: "https://interval-api.herokuapp.com/swap"),
+            let tokenRefreshURL = URL(string: "https://interval-api.herokuapp.com/refresh") {
             self.configuration.tokenSwapURL = tokenSwapURL
             self.configuration.tokenRefreshURL = tokenRefreshURL
             self.configuration.playURI = ""
@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private lazy var appRemote: SPTAppRemote = {
         let appRemote = SPTAppRemote(configuration: configuration, logLevel: .debug)
         appRemote.delegate = self
-        appRemote.connectionParameters.accessToken = "BQBnC9iGlFhBXYD7YM6CkWUQH-_tcU3XdYUaAJy3MnMp9DmbxWP5F9c2dqinSvWedCLVbjvhvEzddD-KGgiRqRFlFWg8S-cgNRf0pi7uPg0Iyke3i0cFPD5roj-KYZ57qgngrYeXjpsZQbeDH0UPKnTq3OgnwaHU6d6YTwy2Yg"
+//        appRemote.connectionParameters.accessToken = "BQBnC9iGlFhBXYD7YM6CkWUQH-_tcU3XdYUaAJy3MnMp9DmbxWP5F9c2dqinSvWedCLVbjvhvEzddD-KGgiRqRFlFWg8S-cgNRf0pi7uPg0Iyke3i0cFPD5roj-KYZ57qgngrYeXjpsZQbeDH0UPKnTq3OgnwaHU6d6YTwy2Yg"
         return appRemote
     }()
     
