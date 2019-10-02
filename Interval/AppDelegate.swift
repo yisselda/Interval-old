@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  Interval
-//
-//  Created by Yisselda Rhoc on 9/20/19.
-//  Copyright © 2019 Yisselda Rhoc. All rights reserved.
-//
-
 import UIKit
 
 private let SpotifyClientID = "2ab7f90f49a741c9a384b014163fd95b"
@@ -24,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
     
     private lazy var sessionManager: SPTSessionManager = {
-        if let tokenSwapURL = URL(string: "https://interval-api.herokuapp.com/swap"),
-            let tokenRefreshURL = URL(string: "https://interval-api.herokuapp.com/refresh") {
+        if let tokenSwapURL = URL(string: "https://interval-spotify-auth.herokuapp.com/token"),
+            let tokenRefreshURL = URL(string: "https://interval-spotify-auth.herokuapp.com/refresh_token") {
             self.configuration.tokenSwapURL = tokenSwapURL
             self.configuration.tokenRefreshURL = tokenRefreshURL
             self.configuration.playURI = ""
