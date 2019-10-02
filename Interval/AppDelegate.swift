@@ -16,11 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
     
     private lazy var sessionManager: SPTSessionManager = {
-        if let tokenSwapURL = URL(string: "https://interval-spotify-auth.herokuapp.com/token"),
-            let tokenRefreshURL = URL(string: "https://interval-spotify-auth.herokuapp.com/refresh_token") {
+        if let tokenSwapURL = URL(string: "https://interval-spotify-auth.herokuapp.com/api/token"),
+            let tokenRefreshURL = URL(string: "https://interval-spotify-auth.herokuapp.com/api/refresh_token") {
             self.configuration.tokenSwapURL = tokenSwapURL
             self.configuration.tokenRefreshURL = tokenRefreshURL
-            self.configuration.playURI = ""
+            self.configuration.playURI = "spotify:track:6194J9U7xviKfo0ZSsnxIc"
         }
         
         return SPTSessionManager(configuration: self.configuration, delegate: self)
@@ -29,7 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private lazy var appRemote: SPTAppRemote = {
         let appRemote = SPTAppRemote(configuration: configuration, logLevel: .debug)
         appRemote.delegate = self
-//        appRemote.connectionParameters.accessToken = "BQBnC9iGlFhBXYD7YM6CkWUQH-_tcU3XdYUaAJy3MnMp9DmbxWP5F9c2dqinSvWedCLVbjvhvEzddD-KGgiRqRFlFWg8S-cgNRf0pi7uPg0Iyke3i0cFPD5roj-KYZ57qgngrYeXjpsZQbeDH0UPKnTq3OgnwaHU6d6YTwy2Yg"
         return appRemote
     }()
     
