@@ -111,13 +111,9 @@ class SpotifyClient: NSObject, SpotifyClientType {
     super.init()
   }
   
-    var isSpotifyAppInstalled:  Bool {
-        return sessionManager.isSpotifyAppInstalled
-    }
-    
-    var isUserAuthenticated: Bool {
-        return sessionManager.session.flatMap { !$0.isExpired } ?? false
-    }
+  func isSpotifyAppInstalled() -> Bool {
+    return sessionManager.isSpotifyAppInstalled
+  }
 }
 
 extension SpotifyClient: SPTSessionManagerDelegate {
