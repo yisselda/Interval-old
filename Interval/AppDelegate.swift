@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ app: UIApplication,
                    open url: URL,
                    options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    SpotifyClient.shared.sessionManager.application(app, open: url, options: options)
     return true
   }
   
