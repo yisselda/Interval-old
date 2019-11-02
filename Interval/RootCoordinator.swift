@@ -5,19 +5,28 @@ class RootCoordinator: Coordinator {
   var childCoordinators: [Coordinator] = []
   
   private let navigationController: UINavigationController
-  private let spotifyClient: SpotifyClient
+  private let spotifyClient: SpotifyClientType
   
   init(navigationController: UINavigationController,
-       spotifyClient: SpotifyClient = .shared) {
+       spotifyClient: SpotifyClientType = SpotifyClient.shared) {
     self.navigationController = navigationController
     self.spotifyClient = spotifyClient
   }
   
   func start() {
-    // if is authed
-    let viewController: ViewController = .instantiate()
-    viewController.coordinator = self
-    navigationController.present(viewController, animated: true)
-    //else present list of combos
+    
+     if spotifyClient.isUserAuthenticated {
+        // go to intervals
+    } else {
+        presentInitialViewController()
+    }
   }
+}
+
+private extension RootCoordinator {
+    func presentInitialViewController() {
+        let viewController: ViewController = .instantiate()
+        viewController.coordinator = self
+        navigationController.present(viewController, animated: true)
+    }
 }

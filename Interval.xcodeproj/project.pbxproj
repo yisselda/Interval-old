@@ -17,7 +17,7 @@
 		067C01AA234D5C90000A9BEF /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067C01A9234D5C90000A9BEF /* RootCoordinator.swift */; };
 		067C01AC234D5F74000A9BEF /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067C01AB234D5F74000A9BEF /* Storyboarded.swift */; };
 		067C01AE234D6535000A9BEF /* SpotifyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067C01AD234D6535000A9BEF /* SpotifyClient.swift */; };
-		ED854D53233843D3008A3E3B /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED854D4E2338436F008A3E3B /* SpotifyiOS.framework */; };
+		EDEECB23236DFBFA00F0096B /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED854D4E2338436F008A3E3B /* SpotifyiOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED854D53233843D3008A3E3B /* SpotifyiOS.framework in Frameworks */,
+				EDEECB23236DFBFA00F0096B /* SpotifyiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +90,7 @@
 		06448EDC23353CF5007F610D /* Interval */ = {
 			isa = PBXGroup;
 			children = (
-				ED854D52233843AE008A3E3B /* Spotfiy Framework */,
+				ED854D52233843AE008A3E3B /* Spotify Framework */,
 				ED854D49233841B0008A3E3B /* Bridging Header */,
 				06448EDD23353CF5007F610D /* AppDelegate.swift */,
 				067C01AD234D6535000A9BEF /* SpotifyClient.swift */,
@@ -131,12 +131,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		ED854D52233843AE008A3E3B /* Spotfiy Framework */ = {
+		ED854D52233843AE008A3E3B /* Spotify Framework */ = {
 			isa = PBXGroup;
 			children = (
 				ED854D4E2338436F008A3E3B /* SpotifyiOS.framework */,
 			);
-			path = "Spotfiy Framework";
+			path = "Spotify Framework";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,7 +412,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Interval/Spotfiy\\ Framework",
+					"$(PROJECT_DIR)/Interval/Spotify\\ Framework",
+					"$(PROJECT_DIR)/Interval/Spotify\\ Framework",
+					"$(PROJECT_DIR)/Interval/Spotify\\ Framework",
+					"$(PROJECT_DIR)/Interval/Spotify\\ Framework",
 				);
 				INFOPLIST_FILE = Interval/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -438,7 +441,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Interval/Spotfiy\\ Framework",
+					"$(PROJECT_DIR)/Interval/Spotify\\ Framework",
+					"$(PROJECT_DIR)/Interval/Spotify\\ Framework",
+					"$(PROJECT_DIR)/Interval/Spotify\\ Framework",
+					"$(PROJECT_DIR)/Interval/Spotify\\ Framework",
 				);
 				INFOPLIST_FILE = Interval/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
