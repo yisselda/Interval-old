@@ -1,7 +1,7 @@
 @testable import Interval
 
 class SpotifyClientMock: SpotifyClientType {
-    
+        
     private let isAuthenticated: Bool
     private let isAppInstalled: Bool
     
@@ -16,5 +16,9 @@ class SpotifyClientMock: SpotifyClientType {
     init(isAuthenticated: Bool, isAppInstalled: Bool) {
         self.isAuthenticated = isAuthenticated
         self.isAppInstalled = isAppInstalled
+    }
+    
+    func connect() {
+        //
     }
 }
