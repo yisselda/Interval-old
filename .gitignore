@@ -81,4 +81,22 @@ fastlane/test_output
 
 iOSInjectionProject/
 
+# Swift Package Manager git ignore
+
+.build
+/.previous-build
+xcuserdata
+.DS_Store
+*~
+\#*
+.\#*
+.*.sw[nop]
+*.xcscmblueprint
+/default.profraw
+*.xcodeproj
+Utilities/Docker/*.tar.gz
+.swiftpm
+Package.resolved
+/build
+
 # End of https://www.gitignore.io/api/swift
