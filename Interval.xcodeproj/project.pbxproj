@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,11 +12,13 @@
 		06448EE323353CF5007F610D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06448EE123353CF5007F610D /* Main.storyboard */; };
 		06448EE523353CFA007F610D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06448EE423353CFA007F610D /* Assets.xcassets */; };
 		06448EE823353CFA007F610D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06448EE623353CFA007F610D /* LaunchScreen.storyboard */; };
-		06448EF323353CFA007F610D /* IntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06448EF223353CFA007F610D /* IntervalTests.swift */; };
 		067C01A8234D5B53000A9BEF /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067C01A7234D5B53000A9BEF /* Coordinator.swift */; };
 		067C01AA234D5C90000A9BEF /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067C01A9234D5C90000A9BEF /* RootCoordinator.swift */; };
 		067C01AC234D5F74000A9BEF /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067C01AB234D5F74000A9BEF /* Storyboarded.swift */; };
 		067C01AE234D6535000A9BEF /* SpotifyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067C01AD234D6535000A9BEF /* SpotifyClient.swift */; };
+		ED192E8D236E0BDF001BAF1F /* Nimble in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = ED192E8C236E0BDF001BAF1F /* Nimble */; };
+		EDD3ADCE236E0A23000CD92E /* RootCoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD3ADCD236E0A23000CD92E /* RootCoordinatorSpec.swift */; };
+		EDD3ADD2236E0AB3000CD92E /* Quick in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = EDD3ADD1236E0AB3000CD92E /* Quick */; };
 		EDEECB23236DFBFA00F0096B /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED854D4E2338436F008A3E3B /* SpotifyiOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +41,6 @@
 		06448EE723353CFA007F610D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06448EE923353CFA007F610D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06448EEE23353CFA007F610D /* IntervalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntervalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		06448EF223353CFA007F610D /* IntervalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTests.swift; sourceTree = "<group>"; };
 		06448EF423353CFA007F610D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		067C01A7234D5B53000A9BEF /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		067C01A9234D5C90000A9BEF /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
@@ -47,6 +48,7 @@
 		067C01AD234D6535000A9BEF /* SpotifyClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyClient.swift; sourceTree = "<group>"; };
 		ED854D4A233841B0008A3E3B /* Interval-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Interval-Bridging-Header.h"; sourceTree = "<group>"; };
 		ED854D4E2338436F008A3E3B /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyiOS.framework; sourceTree = "<group>"; };
+		EDD3ADCD236E0A23000CD92E /* RootCoordinatorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinatorSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDD3ADD2236E0AB3000CD92E /* Quick in Frameworks */,
+				ED192E8D236E0BDF001BAF1F /* Nimble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,7 +113,7 @@
 		06448EF123353CFA007F610D /* IntervalTests */ = {
 			isa = PBXGroup;
 			children = (
-				06448EF223353CFA007F610D /* IntervalTests.swift */,
+				EDD3ADCF236E0A2B000CD92E /* RootCoordinator */,
 				06448EF423353CFA007F610D /* Info.plist */,
 			);
 			path = IntervalTests;
@@ -139,6 +143,14 @@
 			path = "Spotify Framework";
 			sourceTree = "<group>";
 		};
+		EDD3ADCF236E0A2B000CD92E /* RootCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				EDD3ADCD236E0A23000CD92E /* RootCoordinatorSpec.swift */,
+			);
+			path = RootCoordinator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,6 +167,8 @@
 			dependencies = (
 			);
 			name = Interval;
+			packageProductDependencies = (
+			);
 			productName = Interval;
 			productReference = 06448EDA23353CF5007F610D /* Interval.app */;
 			productType = "com.apple.product-type.application";
@@ -173,6 +187,10 @@
 				06448EF023353CFA007F610D /* PBXTargetDependency */,
 			);
 			name = IntervalTests;
+			packageProductDependencies = (
+				EDD3ADD1236E0AB3000CD92E /* Quick */,
+				ED192E8C236E0BDF001BAF1F /* Nimble */,
+			);
 			productName = IntervalTests;
 			productReference = 06448EEE23353CFA007F610D /* IntervalTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -205,6 +223,10 @@
 				Base,
 			);
 			mainGroup = 06448ED123353CF5007F610D;
+			packageReferences = (
+				EDD3ADD0236E0AB3000CD92E /* XCRemoteSwiftPackageReference "Quick" */,
+				ED192E8B236E0BDF001BAF1F /* XCRemoteSwiftPackageReference "Nimble" */,
+			);
 			productRefGroup = 06448EDB23353CF5007F610D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -253,7 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06448EF323353CFA007F610D /* IntervalTests.swift in Sources */,
+				EDD3ADCE236E0A23000CD92E /* RootCoordinatorSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +556,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ED192E8B236E0BDF001BAF1F /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.4;
+			};
+		};
+		EDD3ADD0236E0AB3000CD92E /* XCRemoteSwiftPackageReference "Quick" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Quick.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ED192E8C236E0BDF001BAF1F /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED192E8B236E0BDF001BAF1F /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
+		};
+		EDD3ADD1236E0AB3000CD92E /* Quick */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDD3ADD0236E0AB3000CD92E /* XCRemoteSwiftPackageReference "Quick" */;
+			productName = Quick;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 06448ED223353CF5007F610D /* Project object */;
 }

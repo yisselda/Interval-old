@@ -3,7 +3,10 @@ import UIKit
 class RootCoordinator: Coordinator {
   
   var childCoordinators: [Coordinator] = []
-  
+  var topViewController: UIViewController? {
+    return navigationController.topViewController
+  }
+    
   private let navigationController: UINavigationController
   private let spotifyClient: SpotifyClientType
   
@@ -27,6 +30,6 @@ private extension RootCoordinator {
     func presentInitialViewController() {
         let viewController: ViewController = .instantiate()
         viewController.coordinator = self
-        navigationController.present(viewController, animated: true)
+        navigationController.pushViewController(viewController, animated: true)
     }
 }
