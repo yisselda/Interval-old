@@ -98,19 +98,15 @@
 		06448EDC23353CF5007F610D /* Interval */ = {
 			isa = PBXGroup;
 			children = (
-				ED854D52233843AE008A3E3B /* Spotify Framework */,
+				ED2D20AB236F7692001944D3 /* App Launch */,
+				ED2D20AC236F76B9001944D3 /* Authentication */,
 				ED854D49233841B0008A3E3B /* Bridging Header */,
-				06448EDD23353CF5007F610D /* AppDelegate.swift */,
-				067C01AD234D6535000A9BEF /* SpotifyClient.swift */,
-				06D76E78236E05560056190A /* SpotifyAuthViewModel.swift */,
-				06448EDF23353CF5007F610D /* ViewController.swift */,
-				06448EE123353CF5007F610D /* Main.storyboard */,
-				067C01AB234D5F74000A9BEF /* Storyboarded.swift */,
+				ED2D20B2236F7739001944D3 /* Coordinator Protocol */,
+				ED2D20AF236F76F7001944D3 /* Spotify Client */,
+				ED854D52233843AE008A3E3B /* Spotify Framework */,
+				ED2D20B3236F7747001944D3 /* Storyboarded Protocol */,
 				06448EE423353CFA007F610D /* Assets.xcassets */,
-				06448EE623353CFA007F610D /* LaunchScreen.storyboard */,
 				06448EE923353CFA007F610D /* Info.plist */,
-				067C01A7234D5B53000A9BEF /* Coordinator.swift */,
-				067C01A9234D5C90000A9BEF /* RootCoordinator.swift */,
 			);
 			path = Interval;
 			sourceTree = "<group>";
@@ -123,6 +119,82 @@
 				06448EF423353CFA007F610D /* Info.plist */,
 			);
 			path = IntervalTests;
+			sourceTree = "<group>";
+		};
+		ED2D20AB236F7692001944D3 /* App Launch */ = {
+			isa = PBXGroup;
+			children = (
+				ED2D20B4236F775E001944D3 /* View */,
+				ED2D20B1236F7711001944D3 /* Coordinator */,
+				06448EDD23353CF5007F610D /* AppDelegate.swift */,
+			);
+			path = "App Launch";
+			sourceTree = "<group>";
+		};
+		ED2D20AC236F76B9001944D3 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				ED2D20AE236F76D1001944D3 /* View Model */,
+				ED2D20AD236F76C9001944D3 /* View */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		ED2D20AD236F76C9001944D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				06448EDF23353CF5007F610D /* ViewController.swift */,
+				06448EE123353CF5007F610D /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ED2D20AE236F76D1001944D3 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				06D76E78236E05560056190A /* SpotifyAuthViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		ED2D20AF236F76F7001944D3 /* Spotify Client */ = {
+			isa = PBXGroup;
+			children = (
+				067C01AD234D6535000A9BEF /* SpotifyClient.swift */,
+			);
+			path = "Spotify Client";
+			sourceTree = "<group>";
+		};
+		ED2D20B1236F7711001944D3 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				067C01A9234D5C90000A9BEF /* RootCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		ED2D20B2236F7739001944D3 /* Coordinator Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				067C01A7234D5B53000A9BEF /* Coordinator.swift */,
+			);
+			path = "Coordinator Protocol";
+			sourceTree = "<group>";
+		};
+		ED2D20B3236F7747001944D3 /* Storyboarded Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				067C01AB234D5F74000A9BEF /* Storyboarded.swift */,
+			);
+			path = "Storyboarded Protocol";
+			sourceTree = "<group>";
+		};
+		ED2D20B4236F775E001944D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				06448EE623353CFA007F610D /* LaunchScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		ED854D49233841B0008A3E3B /* Bridging Header */ = {

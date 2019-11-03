@@ -38,7 +38,7 @@ private extension RootCoordinator {
     func presentInitialViewController() {
         let spotifyAuthViewModel = SpotifyAuthViewModel(spotifyClient: spotifyClient)
         let viewController: ViewController = .instantiate()
-        viewController.setup(with: spotifyAuthViewModel)
+        viewController.viewModel = spotifyAuthViewModel
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)
     }
