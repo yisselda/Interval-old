@@ -17,7 +17,12 @@ class ViewController: UIViewController, Storyboarded {
 
 private extension ViewController {
     func setup(with viewModel: SpotifyAuthViewModelType) {
-        // placeholder
+        viewModel.delegate = self
     }
 }
 
+extension ViewController: SpotifyAuthViewModelDelegate {
+    func didConnect() {
+        coordinator?.showIntervals()
+    }
+}

@@ -8,10 +8,17 @@ private struct Constants {
 protocol SpotifyClientType {
     var isSpotifyAppInstalled: Bool { get }
     var isUserAuthenticated: Bool { get }
+    var delegate: SpotifyClientDelegate? { get set}
     func connect()
 }
 
+protocol SpotifyClientDelegate {
+    func didConnect()
+}
+
 class SpotifyClient: NSObject, SpotifyClientType {
+    var delegate: SpotifyClientDelegate?
+    
     
     static let shared = SpotifyClient()
     
@@ -54,13 +61,13 @@ class SpotifyClient: NSObject, SpotifyClientType {
         let requestedScopes: SPTScope = [.appRemoteControl]
         self.sessionManager.initiateSession(with: requestedScopes, options: .default)
     }
-    
 }
 
 // MARK: - App Remote Delegate Methods
 extension SpotifyClient: SPTAppRemoteDelegate {
     func appRemoteDidEstablishConnection(_ appRemote: SPTAppRemote) {
         debugPrint(#function)
+        delegate?.didConnect()
         self.appRemote.playerAPI?.delegate = self
         self.appRemote.playerAPI?.subscribe(toPlayerState: { (result, error) in
             if let error = error {
