@@ -18,7 +18,6 @@
 		067C01AA234D5C90000A9BEF /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067C01A9234D5C90000A9BEF /* RootCoordinator.swift */; };
 		067C01AC234D5F74000A9BEF /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067C01AB234D5F74000A9BEF /* Storyboarded.swift */; };
 		067C01AE234D6535000A9BEF /* SpotifyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067C01AD234D6535000A9BEF /* SpotifyClient.swift */; };
-		068623ED243162FF0020D81A /* CwlPreconditionTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 068623EC243162FF0020D81A /* CwlPreconditionTesting */; };
 		06D76E79236E05560056190A /* SpotifyAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D76E78236E05560056190A /* SpotifyAuthViewModel.swift */; };
 		ED192E8D236E0BDF001BAF1F /* Nimble in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = ED192E8C236E0BDF001BAF1F /* Nimble */; };
 		EDA268FF236E130700887429 /* SpotifyClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA268FE236E130700887429 /* SpotifyClientMock.swift */; };
@@ -65,7 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				068623ED243162FF0020D81A /* CwlPreconditionTesting in Frameworks */,
 				EDEECB23236DFBFA00F0096B /* SpotifyiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,7 +276,6 @@
 			);
 			name = Interval;
 			packageProductDependencies = (
-				068623EC243162FF0020D81A /* CwlPreconditionTesting */,
 			);
 			productName = Interval;
 			productReference = 06448EDA23353CF5007F610D /* Interval.app */;
@@ -701,11 +698,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		068623EC243162FF0020D81A /* CwlPreconditionTesting */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 068623EB243162FF0020D81A /* XCRemoteSwiftPackageReference "CwlPreconditionTesting" */;
-			productName = CwlPreconditionTesting;
-		};
 		ED192E8C236E0BDF001BAF1F /* Nimble */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = ED192E8B236E0BDF001BAF1F /* XCRemoteSwiftPackageReference "Nimble" */;
