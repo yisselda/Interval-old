@@ -1,7 +1,6 @@
-
-@testable import Interval
 import Quick
 import Nimble
+@testable import Interval
 
 class RootCoordinatorSpec: QuickSpec {
     override func spec() {
@@ -14,7 +13,7 @@ class RootCoordinatorSpec: QuickSpec {
                     subject.start()
                 }
                 it("should display the login view controller") {
-                    expect(subject.topViewController).to(beAKindOf(ViewController.self))
+                    expect(subject.topViewController).to(beAKindOf(SpotifyAuthViewController.self))
                 }
             }
         }
