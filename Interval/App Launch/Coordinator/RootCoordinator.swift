@@ -19,7 +19,7 @@ class RootCoordinator: Coordinator {
     func start() {
         
         if spotifyClient.isUserAuthenticated {
-            // go to intervals
+            showIntervals()
         } else {
             presentInitialViewController()
         }
@@ -27,6 +27,8 @@ class RootCoordinator: Coordinator {
     
     func showIntervals() {
         debugPrint("showIntervals \(#function)")
+        let viewController: PlaylistViewController = .instantiate()
+        navigationController.pushViewController(viewController, animated: true)
     }
     
     func showConnectionError() {
@@ -37,7 +39,7 @@ class RootCoordinator: Coordinator {
 private extension RootCoordinator {
     func presentInitialViewController() {
         let spotifyAuthViewModel = SpotifyAuthViewModel(spotifyClient: spotifyClient)
-        let viewController: ViewController = .instantiate()
+        let viewController: SpotifyAuthViewController = .instantiate()
         viewController.viewModel = spotifyAuthViewModel
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)

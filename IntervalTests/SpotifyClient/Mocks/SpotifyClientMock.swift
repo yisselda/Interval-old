@@ -1,6 +1,7 @@
 @testable import Interval
 
 class SpotifyClientMock: SpotifyClientType {
+    var delegate: SpotifyClientDelegate?
         
     private let isAuthenticated: Bool
     private let isAppInstalled: Bool

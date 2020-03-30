@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController, Storyboarded {
+class SpotifyAuthViewController: UIViewController, Storyboarded {
     
     weak var coordinator: RootCoordinator?
     
@@ -15,9 +15,14 @@ class ViewController: UIViewController, Storyboarded {
     }
 }
 
-private extension ViewController {
+private extension SpotifyAuthViewController {
     func setup(with viewModel: SpotifyAuthViewModelType) {
-        // placeholder
+        viewModel.delegate = self
     }
 }
 
+extension SpotifyAuthViewController: SpotifyAuthViewModelDelegate {
+    func didConnect() {
+        coordinator?.showIntervals()
+    }
+}

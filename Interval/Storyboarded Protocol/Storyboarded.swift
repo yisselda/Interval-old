@@ -1,17 +1,25 @@
+// Inspired by: https://www.raywenderlich.com/158-coordinator-tutorial-for-ios-getting-started
+// Storyboard's filename need to be the name pre-fixing the "ViewController" part
+// e.g.
+// - MainViewController.swift
+// - Main.storyboard
 import UIKit
 
-protocol Storyboarded {
-  static func instantiate() -> Self
+protocol Storyboarded: NSObjectProtocol {
+    associatedtype MyType
+    static var defaultFileName: String { get }
+    static func instantiate(_ bundle: Bundle?) -> MyType
 }
 
 extension Storyboarded where Self: UIViewController {
-  static func instantiate() -> Self {
-    let storyboard = UIStoryboard(name: "Main", bundle: .main)
-    let vc = storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! Self
-    if #available(iOS 13.0, *) {
-      vc.modalPresentationStyle = .fullScreen
+    static var defaultFileName: String {
+        let filename = NSStringFromClass(Self.self).components(separatedBy: ".").last!
+        return filename.replacingOccurrences(of: "ViewController", with: "")
     }
     
-    return vc
-  }
+    static func instantiate(_ bundle: Bundle? = nil) -> Self {
+        let fileName = defaultFileName
+        let sb = UIStoryboard(name: fileName, bundle: bundle)
+        return sb.instantiateInitialViewController() as! Self
+    }
 }

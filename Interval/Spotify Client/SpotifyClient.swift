@@ -1,6 +1,6 @@
 private struct Constants {
     static let SpotifyClientID = "2ab7f90f49a741c9a384b014163fd95b"
-    static let SpotifyRedirectURL = URL(string: "spotify-ios-quick-start://spotify-login-callback")
+    static let SpotifyRedirectURL = URL(string: "interval://spotify-login-callback")
     static let tokenSwapURL = URL(string: "https://interval-spotify-auth.herokuapp.com/api/token")!
     static let tokenRefreshURL = URL(string: "https://interval-spotify-auth.herokuapp.com/api/refresh_token")!
 }
@@ -8,15 +8,21 @@ private struct Constants {
 protocol SpotifyClientType {
     var isSpotifyAppInstalled: Bool { get }
     var isUserAuthenticated: Bool { get }
+    var delegate: SpotifyClientDelegate? { get set}
     func connect()
 }
 
+protocol SpotifyClientDelegate {
+    func didConnect()
+}
+
 class SpotifyClient: NSObject, SpotifyClientType {
+    var delegate: SpotifyClientDelegate?
+    
     
     static let shared = SpotifyClient()
     
     private lazy var configuration: SPTConfiguration = {
-        
         guard let url = Constants.SpotifyRedirectURL else {
             fatalError("Spotify redirect URL was misconfigured, failing URL: \(String(describing: Constants.SpotifyRedirectURL))")
         }
@@ -54,13 +60,13 @@ class SpotifyClient: NSObject, SpotifyClientType {
         let requestedScopes: SPTScope = [.appRemoteControl]
         self.sessionManager.initiateSession(with: requestedScopes, options: .default)
     }
-    
 }
 
 // MARK: - App Remote Delegate Methods
 extension SpotifyClient: SPTAppRemoteDelegate {
     func appRemoteDidEstablishConnection(_ appRemote: SPTAppRemote) {
         debugPrint(#function)
+        delegate?.didConnect()
         self.appRemote.playerAPI?.delegate = self
         self.appRemote.playerAPI?.subscribe(toPlayerState: { (result, error) in
             if let error = error {
@@ -81,7 +87,7 @@ extension SpotifyClient: SPTAppRemoteDelegate {
 // MARK: - Session Delegate Methods
 extension SpotifyClient: SPTSessionManagerDelegate {
     func sessionManager(manager: SPTSessionManager, didInitiate session: SPTSession) {
-        debugPrint("didInitiate \(#function)")
+        print("success", session)
         DispatchQueue.main.async {[weak self] in
             self?.appRemote.connectionParameters.accessToken = session.accessToken
             self?.appRemote.connect()
@@ -89,15 +95,15 @@ extension SpotifyClient: SPTSessionManagerDelegate {
     }
     
     func sessionManager(manager: SPTSessionManager, didFailWith error: Error) {
-        debugPrint("didFailWith \(#function)")
+        print("fail", error)
     }
     
     func sessionManager(manager: SPTSessionManager, didRenew session: SPTSession) {
-        debugPrint("didRenew \(#function)")
+        print("renewed", session)
     }
     
     func sessionManager(manager: SPTSessionManager, shouldRequestAccessTokenWith code: String) -> Bool {
-        debugPrint("received OAuth \(#function)")
+        print("received OAuth")
         return true
     }
 }
