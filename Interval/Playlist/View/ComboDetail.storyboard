@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8av-xx-zch">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Combo Detail View Controller-->
+        <scene sceneID="zIA-EL-mQV">
+            <objects>
+                <viewController id="8av-xx-zch" customClass="ComboDetailViewController" customModule="Interval" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dTa-dz-v7H">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Combo Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkc-VB-VMo">
+                                <rect key="frame" x="44" y="98" width="105" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Twerk it Out!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aUC-GI-1CP">
+                                <rect key="frame" x="44" y="127" width="326" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultphoto" translatesAutoresizingMaskIntoConstraints="NO" id="PwA-qc-VTA">
+                                <rect key="frame" x="47" y="169" width="320" height="320"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="gp0-0j-AeJ"/>
+                                    <constraint firstAttribute="width" constant="320" id="qbE-6H-9AM"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="2Ba-4u-pOg" appends="YES" id="E4k-eD-KZm"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="PwA-qc-VTA" firstAttribute="top" secondItem="aUC-GI-1CP" secondAttribute="bottom" constant="8" symbolType="layoutAnchor" id="ErF-CU-TiU"/>
+                            <constraint firstItem="aUC-GI-1CP" firstAttribute="top" secondItem="Tkc-VB-VMo" secondAttribute="bottom" constant="8" id="F3A-lB-tcc"/>
+                            <constraint firstItem="27l-fW-gpt" firstAttribute="trailing" secondItem="aUC-GI-1CP" secondAttribute="trailing" constant="44" id="dV1-96-MmC"/>
+                            <constraint firstItem="Tkc-VB-VMo" firstAttribute="leading" secondItem="aUC-GI-1CP" secondAttribute="leading" id="eEz-Zq-eXc"/>
+                            <constraint firstItem="aUC-GI-1CP" firstAttribute="leading" secondItem="27l-fW-gpt" secondAttribute="leading" constant="44" id="gdW-AK-Iz7"/>
+                            <constraint firstItem="Tkc-VB-VMo" firstAttribute="top" secondItem="27l-fW-gpt" secondAttribute="top" constant="54" id="ivD-cy-6vG"/>
+                            <constraint firstItem="PwA-qc-VTA" firstAttribute="centerX" secondItem="dTa-dz-v7H" secondAttribute="centerX" id="rQh-EH-8an"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="27l-fW-gpt"/>
+                    </view>
+                    <connections>
+                        <outlet property="name" destination="aUC-GI-1CP" id="Uge-0H-lya"/>
+                        <outlet property="photoImageView" destination="PwA-qc-VTA" id="zOb-D1-vYG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vFz-EI-Vyr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="2Ba-4u-pOg">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="8av-xx-zch" id="Qsl-gc-4u6"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="139" y="109"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="defaultphoto" width="320" height="320"/>
+    </resources>
+</document>

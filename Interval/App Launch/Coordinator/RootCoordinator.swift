@@ -18,16 +18,16 @@ class RootCoordinator: Coordinator {
     
     func start() {
         
-        if spotifyClient.isUserAuthenticated {
+//        if spotifyClient.isUserAuthenticated {
             showIntervals()
-        } else {
-            presentInitialViewController()
-        }
+//        } else {
+//            presentInitialViewController()
+//        }
     }
     
     func showIntervals() {
         debugPrint("showIntervals \(#function)")
-        let viewController: PlaylistViewController = .instantiate()
+        let viewController: ComboDetailViewController = .instantiate()
         navigationController.pushViewController(viewController, animated: true)
     }
     
