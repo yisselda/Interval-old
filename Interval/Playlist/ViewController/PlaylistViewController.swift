@@ -24,6 +24,13 @@ extension PlaylistViewController {
         view.backgroundColor = .systemBlue
         tableView.dataSource = self
         title = "Intervals"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
+    }
+    
+    @objc func addTapped() {
+        // present combo detail
+        let viewController: ComboDetailViewController = .instantiate()
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 

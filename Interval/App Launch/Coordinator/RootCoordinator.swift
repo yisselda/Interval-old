@@ -27,7 +27,7 @@ class RootCoordinator: Coordinator {
     
     func showIntervals() {
         debugPrint("showIntervals \(#function)")
-        let viewController: ComboDetailViewController = .instantiate()
+        let viewController: PlaylistViewController = .instantiate()
         navigationController.pushViewController(viewController, animated: true)
     }
     
