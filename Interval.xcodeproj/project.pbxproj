@@ -22,6 +22,7 @@
 		0686240B24454B8A0020D81A /* Combo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0686240A24454B8A0020D81A /* Combo.swift */; };
 		0686240D24455F2D0020D81A /* ComboDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0686240C24455F2D0020D81A /* ComboDetailViewController.swift */; };
 		0686240F24455F890020D81A /* ComboDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0686240E24455F890020D81A /* ComboDetail.storyboard */; };
+		0686241324495BC90020D81A /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0686241224495BC90020D81A /* Interval.swift */; };
 		06D76E79236E05560056190A /* SpotifyAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D76E78236E05560056190A /* SpotifyAuthViewModel.swift */; };
 		ED192E8D236E0BDF001BAF1F /* Nimble in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = ED192E8C236E0BDF001BAF1F /* Nimble */; };
 		EDA268FF236E130700887429 /* SpotifyClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA268FE236E130700887429 /* SpotifyClientMock.swift */; };
@@ -73,6 +74,7 @@
 		0686240A24454B8A0020D81A /* Combo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Combo.swift; sourceTree = "<group>"; };
 		0686240C24455F2D0020D81A /* ComboDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComboDetailViewController.swift; sourceTree = "<group>"; };
 		0686240E24455F890020D81A /* ComboDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ComboDetail.storyboard; sourceTree = "<group>"; };
+		0686241224495BC90020D81A /* Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval.swift; sourceTree = "<group>"; };
 		06D76E78236E05560056190A /* SpotifyAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAuthViewModel.swift; sourceTree = "<group>"; };
 		ED854D4A233841B0008A3E3B /* Interval-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Interval-Bridging-Header.h"; sourceTree = "<group>"; };
 		ED854D4E2338436F008A3E3B /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyiOS.framework; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				0686240A24454B8A0020D81A /* Combo.swift */,
+				0686241224495BC90020D81A /* Interval.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 			files = (
 				061BE96624302E9D00CDE7D7 /* PlaylistViewController.swift in Sources */,
 				067C01AA234D5C90000A9BEF /* RootCoordinator.swift in Sources */,
+				0686241324495BC90020D81A /* Interval.swift in Sources */,
 				06448EE023353CF5007F610D /* SpotifyAuthViewController.swift in Sources */,
 				067C01AC234D5F74000A9BEF /* Storyboarded.swift in Sources */,
 				0686240B24454B8A0020D81A /* Combo.swift in Sources */,

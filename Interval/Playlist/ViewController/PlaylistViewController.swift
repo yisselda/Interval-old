@@ -29,8 +29,9 @@ extension PlaylistViewController {
     
     @objc func addTapped() {
         // present combo detail
-        let viewController: ComboDetailViewController = .instantiate()
-        navigationController?.pushViewController(viewController, animated: true)
+        let comboDetailViewController: ComboDetailViewController = .instantiate()
+        comboDetailViewController.delegate = self
+        navigationController?.pushViewController(comboDetailViewController, animated: true)
     }
 }
 
@@ -44,5 +45,13 @@ extension PlaylistViewController: UITableViewDataSource {
         
         cell.textLabel?.text = combos[indexPath.row].title
         return cell
+    }
+}
+
+extension PlaylistViewController: ComboDetailViewControllerDelegate {
+    func comboWasCreated(_ combo: Combo) {
+        combos.append(combo)
+        navigationController?.popViewController(animated: true)
+        tableView.reloadData()
     }
 }

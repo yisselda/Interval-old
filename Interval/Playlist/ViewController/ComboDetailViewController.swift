@@ -1,13 +1,26 @@
 import UIKit
 
+protocol ComboDetailViewControllerDelegate: class {
+    func comboWasCreated(_ combo: Combo)
+}
+
 class ComboDetailViewController: UIViewController, Storyboarded {
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var name: UITextField!
+    var combo: Combo?
+    weak var delegate: ComboDetailViewControllerDelegate?
     
     // MARK: Actions
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
         name.resignFirstResponder()
         pickImage()
+    }
+    
+    @IBAction func selectCreateCombo(_ sender: UIButton) {
+        print(#function)
+        let interval = Interval()
+        combo = Combo(title: name.text!, intervals: [interval])
+        delegate?.comboWasCreated(combo!)
     }
 }
 
